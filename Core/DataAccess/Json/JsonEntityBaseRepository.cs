@@ -20,7 +20,8 @@ namespace Core.DataAccess.Json
             string jsonData = File.ReadAllText(jsonPath);
             List<TEntity> tEntities = JsonConvert.DeserializeObject<List<TEntity>>(jsonData);
 
-            
+            int maxId=tEntities.Max(p => p.Id);
+            entity.Id = maxId+1;
             tEntities.Add(entity);
 
             string newJsonData = JsonConvert.SerializeObject(tEntities, Formatting.Indented);
