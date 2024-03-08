@@ -13,8 +13,7 @@ builder.Services.AddControllers();
 builder.Services.AddCors();
 
 builder.Services.AddSingleton<IPointService, PointManager>();
-builder.Services.AddSingleton<IPointDal, JsPoint>(); //ileride veritabýna geçilecek olursa Jspoint ---> EfPointDal 'a çevir
-
+builder.Services.AddSingleton<IPointDal, JsPoint>(); // 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
