@@ -44,10 +44,10 @@ namespace Business.Concrete
             return new SuccessDataResult<Point>(_pointDal.Get(p=>p.Id==id),Message.MadePoint);
         }
 
-        //public IDataResult<Point> GetId(int id)
-        //{
-        //    return new SuccessDataResult<Point>(_pointDal.Get( id), Message.MadePoint);
-        //}
+        public IDataResult<Point> GetId(int id)
+        {
+            return new SuccessDataResult<Point>(_pointDal.Get(id), Message.MadePoint);
+        }
 
         public IResult Update(Point point)
         {

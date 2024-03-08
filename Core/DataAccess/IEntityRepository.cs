@@ -15,7 +15,7 @@ namespace Core.DataAccess
         List<T> GetAll(Expression<Func<T, bool>> filter = null);//Experssion Linq ile sorgu , filtreleme yapabilmemizii sağlıyor
                                                                 //p=>p.Category.Id gibi
         T Get(Expression<Func<T, bool>> filter);// filtre vermek zorunlu 
-       // T Get(int id);
+        T Get(int id);
         void Add(T entity);
         void Update(T entity);
         void Delete(T entity);

@@ -13,7 +13,7 @@ namespace Business.Abstract
         IDataResult<List<Point>> GetAll();
         IDataResult<Point> GetById(int id);
 
-        //IDataResult<Point> GetId(int id);
+        IDataResult<Point> GetId(int id);
 
         IResult Add(Point point);
 

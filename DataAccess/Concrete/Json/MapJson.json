@@ -33,5 +33,12 @@
     "PointNumber": 42,
     "Latitude": 32.47755020327505,
     "Longitude": 37.856092264281656
+  },
+  {
+    "Id": 0,
+    "PointName": "Mersin",
+    "PointNumber": 33,
+    "Latitude": 34.607614101443616,
+    "Longitude": 36.84092879309895
   }
 ]

@@ -41,7 +41,10 @@ namespace Core.DataAccess.EntityFreamework
             }
         }
 
-        
+        public TEntity Get(int id)
+        {
+            throw new NotImplementedException();
+        }
 
         public List<TEntity> GetAll(Expression<Func<TEntity, bool>> filter = null)
         {
