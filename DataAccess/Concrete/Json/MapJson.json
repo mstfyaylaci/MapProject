@@ -8,37 +8,16 @@
   },
   {
     "Id": 2,
-    "PointName": "İstanbul",
-    "PointNumber": 6,
-    "Latitude": 28.95214091988342,
-    "Longitude": 41.172873331121565
+    "PointName": "Bartın",
+    "PointNumber": 74,
+    "Latitude": 32.32701575196282,
+    "Longitude": 41.62767721850716
   },
   {
     "Id": 3,
-    "PointName": "sivas",
-    "PointNumber": 6,
-    "Latitude": 37.06246235058264,
-    "Longitude": 39.933400000000006
-  },
-  {
-    "Id": 4,
-    "PointName": "Eskişehir",
-    "PointNumber": 26,
-    "Latitude": 30.505842343389013,
-    "Longitude": 39.82609323487671
-  },
-  {
-    "Id": 6,
-    "PointName": "mer",
-    "PointNumber": 321,
-    "Latitude": 34.596948680309914,
-    "Longitude": 36.84946388803624
-  },
-  {
-    "Id": 7,
-    "PointName": "konya",
-    "PointNumber": 231,
-    "Latitude": 32.52565419394629,
-    "Longitude": 37.92729292028302
+    "PointName": "Konya",
+    "PointNumber": 42,
+    "Latitude": 32.471274644123596,
+    "Longitude": 37.91982436831832
   }
 ]
