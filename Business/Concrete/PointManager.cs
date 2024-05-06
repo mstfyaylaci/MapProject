@@ -20,8 +20,10 @@ namespace Business.Concrete
             _pointDal = pointDal;
         }
 
+
         public IResult Add(Point point)
         {
+            //kurAL
 
             _pointDal.Add(point);
             return new SuccessResult(Message.AddedPoint);

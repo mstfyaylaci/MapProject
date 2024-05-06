@@ -13,14 +13,20 @@ namespace Core.DataAccess.Json
         where TEntity : class, IEntity, new()
 
     {
-        private static readonly string jsonPath = @"D:\C#&Angular-Kamp\MapProject\DataAccess\Concrete\Json\MapJson.json";
+
+        private static readonly string jsonFolder = @"D:\C#&Angular-Kamp\MapProject\DataAccess\Concrete\Json\JsonFile";
+        private static readonly string jsonPath = Path.Combine(jsonFolder, typeof(TEntity).Name + ".json");
+
         public void Add(TEntity entity)
         {
 
             string jsonData = File.ReadAllText(jsonPath);
             List<TEntity> tEntities = JsonConvert.DeserializeObject<List<TEntity>>(jsonData);
 
-            int maxId=tEntities.Max(p => p.Id);
+            
+            
+            int maxId = tEntities.Any() ? tEntities.Max(e => e.Id) : 0;
+
             entity.Id = maxId+1;
             tEntities.Add(entity);
 

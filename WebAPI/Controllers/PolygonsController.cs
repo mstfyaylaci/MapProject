@@ -1,26 +1,29 @@
 ﻿using Business.Abstract;
+
 using Entites.Concrete;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace WebAPI.Controllers
 {
-
     [Route("api/[controller]")]
     [ApiController]
-    public class PointsController : ControllerBase
+    public class PolygonsController : ControllerBase
     {
-        IPointService _pointService;
+        IPolygonService _polygonService;
+        
 
-        public PointsController(IPointService pointService)
+        public PolygonsController(IPolygonService polygonService)
         {
-            _pointService = pointService;
+            _polygonService = polygonService;
+            
         }
+
 
         [HttpGet("getall")]
         public IActionResult GetAll()
         {
-            var result = _pointService.GetAll();
+            var result = _polygonService.GetAll();
 
             if (result.Success)
             {
@@ -29,11 +32,23 @@ namespace WebAPI.Controllers
             return BadRequest(result);
         }
 
+        [HttpGet("getbyid")]
+        public IActionResult GetById(int id)
+        {
+            var result = _polygonService.GetById(id);
 
-        //[HttpGet("getbyid")]
-        //public IActionResult GetById(int id)
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
+        }
+
+        // Json formatta olduğu zaman açılacak 
+        //[HttpGet("getid")]
+        //public IActionResult GetId(int id)
         //{
-        //    var result = _pointService.GetById(id);
+        //    var result = _pointService.GetId(id);
 
         //    if (result.Success)
         //    {
@@ -42,23 +57,12 @@ namespace WebAPI.Controllers
         //    return BadRequest(result);
         //}
 
-        // Json formatta olduğu zaman açılacak 
-        [HttpGet("getid")]
-        public IActionResult GetId(int id)
-        {
-            var result = _pointService.GetId(id);
-
-            if (result.Success)
-            {
-                return Ok(result);
-            }
-            return BadRequest(result);
-        }
-
         [HttpPost("add")]
-        public IActionResult Add(Point point)
+        public IActionResult Add(Polygon polygon)
         {
-            var result = _pointService.Add(point);
+
+
+            var result = _polygonService.Add(polygon);
 
             if (result.Success)
             {
@@ -66,10 +70,11 @@ namespace WebAPI.Controllers
             }
             return BadRequest(result);
         }
+
         [HttpPost("update")]
-        public IActionResult Update(Point point)
+        public IActionResult Update(Polygon polygon)
         {
-            var result = _pointService.Update(point);
+            var result = _polygonService.Update(polygon);
 
             if (result.Success)
             {
@@ -79,9 +84,9 @@ namespace WebAPI.Controllers
         }
 
         [HttpPost("delete")]
-        public IActionResult Delete(Point point)
+        public IActionResult Delete(Polygon polygon)
         {
-            var result = _pointService.Delete(point);
+            var result = _polygonService.Delete(polygon);
 
             if (result.Success)
             {

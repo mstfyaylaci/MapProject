@@ -16,5 +16,14 @@ namespace Business.Constant
         public static string MadePoint = "Nokta getirildi";
 
         public static string UpdatedPoint = "Nokta güncellendi";
+
+        public static string AddedPolygon = "Polygon Eklendi";
+
+        public static string DeletedPolygon = "Polygon Silindi";
+        public static string ListedPolygon = "Polygonlar Listelendi";
+
+        public static string MadePolygon = "Polygon getirildi";
+
+        public static string UpdatedPolygon = "Polygon güncellendi";
     }
 }
