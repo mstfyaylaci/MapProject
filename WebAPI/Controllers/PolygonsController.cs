@@ -32,23 +32,10 @@ namespace WebAPI.Controllers
             return BadRequest(result);
         }
 
-        [HttpGet("getbyid")]
-        public IActionResult GetById(int id)
-        {
-            var result = _polygonService.GetById(id);
-
-            if (result.Success)
-            {
-                return Ok(result);
-            }
-            return BadRequest(result);
-        }
-
-        // Json formatta olduğu zaman açılacak 
-        //[HttpGet("getid")]
-        //public IActionResult GetId(int id)
+        //[HttpGet("getbyid")]
+        //public IActionResult GetById(int id)
         //{
-        //    var result = _pointService.GetId(id);
+        //    var result = _polygonService.GetById(id);
 
         //    if (result.Success)
         //    {
@@ -56,6 +43,19 @@ namespace WebAPI.Controllers
         //    }
         //    return BadRequest(result);
         //}
+
+        // Json formatta olduğu zaman açılacak 
+        [HttpGet("getid")]
+        public IActionResult GetId(int id)
+        {
+            var result = _polygonService.GetId(id);
+
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
+        }
 
         [HttpPost("add")]
         public IActionResult Add(Polygon polygon)
